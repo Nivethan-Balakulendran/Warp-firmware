@@ -64,24 +64,24 @@ gpio_output_pin_user_config_t	outputPins[] = {
 		.config.slewRate = kPortSlowSlewRate,
 		.config.driveStrength = kPortLowDriveStrength,
 	},
-	{
-		.pinName = kWarpPinSPI_SCK,				/*	Was kWarpPinTPS82740A_CTLEN in Warp v2			*/
-		.config.outputLogic = 1,
-		.config.slewRate = kPortSlowSlewRate,
-		.config.driveStrength = kPortLowDriveStrength,
-	},
-	{
-		.pinName = kWarpPinTPS82740_VSEL3,
-		.config.outputLogic = 1,
-		.config.slewRate = kPortSlowSlewRate,
-		.config.driveStrength = kPortLowDriveStrength,
-	},
-	{
-		.pinName = kWarpPinTS5A3154_IN,				/*	Was kWarpPinUnusedPTB6 in Warp v2			*/
-		.config.outputLogic = 1,
-		.config.slewRate = kPortSlowSlewRate,
-		.config.driveStrength = kPortLowDriveStrength,
-	},
+	//{
+	//	.pinName = kWarpPinSPI_SCK,				/*	Was kWarpPinTPS82740A_CTLEN in Warp v2			*/
+	//	.config.outputLogic = 1,
+	//	.config.slewRate = kPortSlowSlewRate,
+	//	.config.driveStrength = kPortLowDriveStrength,
+	//},
+	//{
+	//	.pinName = kWarpPinTPS82740_VSEL3,
+	//	.config.outputLogic = 1,
+	//	.config.slewRate = kPortSlowSlewRate,
+	//	.config.driveStrength = kPortLowDriveStrength,
+	//},
+	//{
+	//	.pinName = kWarpPinTS5A3154_IN,				/*	Was kWarpPinUnusedPTB6 in Warp v2			*/
+	//	.config.outputLogic = 1,
+	//	.config.slewRate = kPortSlowSlewRate,
+	//	.config.driveStrength = kPortLowDriveStrength,
+	//},
 	{
 		.pinName = kWarpPinSI4705_nRST,				/*	Was kWarpPinUnusedPTB7 in Warp v2			*/
 		.config.outputLogic = 1,
@@ -163,12 +163,12 @@ gpio_output_pin_user_config_t	outputPins[] = {
 		.config.slewRate = kPortSlowSlewRate,
 		.config.driveStrength = kPortLowDriveStrength,
 	},
-	{
-		.pinName = kWarpPinUnusedPTB6,
-		.config.outputLogic = 1,
-		.config.slewRate = kPortSlowSlewRate,
-		.config.driveStrength = kPortLowDriveStrength,
-	},
+	//{
+	//	.pinName = kWarpPinUnusedPTB6,
+	//	.config.outputLogic = 1,
+	//	.config.slewRate = kPortSlowSlewRate,
+	//	.config.driveStrength = kPortLowDriveStrength,
+	//},
 	{
 		.pinName = kWarpPinUnusedPTB7,
 		.config.outputLogic = 1,
@@ -228,6 +228,27 @@ gpio_input_pin_user_config_t	inputPins[] = {
 		.pinName = kWarpPinKL03_VDD_ADC,
 		.config.isPullEnable = true,
 		.config.pullSelect = kPortPullUp,
+		.config.isPassiveFilterEnabled = false,
+		.config.interrupt = kPortIntDisabled,
+	},
+	{
+		.pinName = kWarpPinThumbSW,
+		.config.isPullEnable = true,
+		.config.pullSelect = kPortPullDown,
+		.config.isPassiveFilterEnabled = false,
+		.config.interrupt = kPortIntDisabled,
+	},
+	{
+		.pinName = kWarpPinSW2,
+		.config.isPullEnable = true,
+		.config.pullSelect = kPortPullDown,
+		.config.isPassiveFilterEnabled = false,
+		.config.interrupt = kPortIntDisabled,
+	},						        
+	{
+		.pinName = kWarpPinSW3,
+		.config.isPullEnable = true,
+		.config.pullSelect = kPortPullDown,
 		.config.isPassiveFilterEnabled = false,
 		.config.interrupt = kPortIntDisabled,
 	},
