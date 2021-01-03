@@ -1400,6 +1400,8 @@ main(void)
 			SEGGER_RTT_WriteString(0, "\nSW2 => Game Mode");
 			SEGGER_RTT_WriteString(0, "\nSW3 => Gesture Swipe Mode");
 			print++;
+			//Fill Screen Purple to show in Mode Select Loop
+			fillscreen(0x94, 0x00, 0xD3);
 		}
 
 		//Game Mode Switch (1 is off and 0 is on)
@@ -1414,6 +1416,11 @@ main(void)
                 //Game Mode Function Start
 		if (modegame == 0)
 		{
+			clearscreen();
+			//Fill Screen Blue to show enetering Game Mode
+			fillscreen(0x00, 0x00, 0xFF);
+			OSA_TimeDelay(2000);
+			clearscreen();
 			SEGGER_RTT_WriteString(0, "\nGame Mode");
 			gamestart();
 			print = 0;
@@ -1422,6 +1429,11 @@ main(void)
 		//Gesture Swipe Mode Function Start
 		else if (modegesture == 0)
 		{
+			clearscreen();
+			//Fill Screen Pale Green to show entering Gesture Mode
+			fillscreen(0x98, 0xFB, 0x98);
+			OSA_TimeDelay(2000);
+			clearscreen();
 			SEGGER_RTT_WriteString(0, "\nGesture Swipe Mode");
 			readaccel();
 			print = 0;
